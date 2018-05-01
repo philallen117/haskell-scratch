@@ -8,6 +8,8 @@ charToString :: Char -> String
 charToString = (:[])
 
 type Row = [Colour]
+
+rowSize :: Int
 rowSize = 5
 
 readRow :: String -> Row
@@ -25,10 +27,10 @@ correct :: Answer -> Bool
 correct a = blacks a == rowSize
 
 check :: Row -> Row -> Answer
-check problem guess = Answer { blacks = p, whites = c - p}
+check problem guess = Answer { blacks = pm, whites = cm - pm}
   where
-    p = placeMatches problem guess
-    c = colourMatches problem guess
+    pm = placeMatches problem guess
+    cm = colourMatches problem guess
 
     placeMatches :: Row -> Row -> Int
     placeMatches r1 r2 = foldr ((+) . fromEnum) 0 (zipWith (==) r1 r2)

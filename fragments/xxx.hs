@@ -1,6 +1,3 @@
-module Main (main)
-where
-
 fstString :: [Char] -> [Char]
 fstString x = x ++ " in the rain"
 

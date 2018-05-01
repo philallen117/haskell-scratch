@@ -9,7 +9,7 @@ data Tree = Leaf | Node Int Tree Tree deriving Show
 treeDepth :: Tree -> Int
 -- longest path from root to a leaf
 treeDepth Leaf = 0
-treeDepth (Node _ leftSubtree rightSubtree) = 
+treeDepth (Node _ leftSubtree rightSubtree) =
   1 + max (treeDepth leftSubtree) (treeDepth rightSubtree)
 
 
@@ -43,6 +43,7 @@ toList :: Tree -> [Int]
 toList Leaf = []
 toList (Node i l r) = toList l ++ (i : toList r)
 
+f n = n + 1
 
 testTree :: Tree
 testTree = Node 5 (Node 4 (Node 2 (Node 1 Leaf Leaf) Leaf) Leaf) (Node 7 (Node 6 Leaf Leaf) Leaf)
