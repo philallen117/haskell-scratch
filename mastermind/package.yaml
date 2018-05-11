@@ -1,14 +1,13 @@
-name:                scratch
+name:                mastermind
 version:             0.1.0.0
-github:              "philallen117/scratch"
-license:             BSD3
+license:             MIT
 author:              "Phil Allen"
 maintainer:          "phil.allen.gm@gmail.com"
 copyright:           "Phil Allen"
 
-extra-source-files:
-- README.md
-- ChangeLog.md
+# extra-source-files:
+# - README.md
+# - ChangeLog.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -17,19 +16,19 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on Github at <https://github.com/philallen117/scratch#readme>
+description:         Simple mastermind game
 
 dependencies:
 - base >= 4.7 && < 5
 - containers
-- parsec
+# - parsec
 #- quickcheck >= 2.9.2
 
 library:
   source-dirs: src
 
 executables:
-  scratch-exe:
+  mastermind-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -37,10 +36,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - scratch
+    - mastermind
 
 tests:
-  scratch-test:
+  mastermind-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -48,4 +47,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - scratch
+    - mastermind

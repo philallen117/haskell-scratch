@@ -1,0 +1,62 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 6f7c0678e98479bfe8fa9025ea1f43333a142f5f5ed95bf17f5128d954d3a3a8
+
+name:           mastermind
+version:        0.1.0.0
+description:    Simple mastermind game
+homepage:       https://github.com/philallen117/haskell-scratch
+author:         Phil Allen
+maintainer:     phil.allen.gm@gmail.com
+copyright:      Phil Allen
+license:        MIT
+build-type:     Simple
+cabal-version:  >= 1.10
+
+-- source-repository head
+--  type: git
+--  location: https://github.com/philallen117/scratch
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , parsec
+  exposed-modules:
+      Mastermind
+  other-modules:
+      Paths_scratch
+  default-language: Haskell2010
+
+executable mastermind-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , parsec
+    , scratch
+  other-modules:
+      Paths_scratch
+  default-language: Haskell2010
+
+test-suite scratch-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , parsec
+    , scratch
+  other-modules:
+      Paths_scratch
+  default-language: Haskell2010
